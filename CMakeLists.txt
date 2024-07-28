@@ -24,4 +24,8 @@ set(EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/bin")
 set(LIBRARY_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/lib")
 
 
-add_executable(${PROJECT_NAME} src/main.cpp)
+add_executable(server src/server.cpp)
+target_link_libraries(server pthread)
+
+add_executable(client src/client.cpp)
+target_link_libraries(client pthread)
